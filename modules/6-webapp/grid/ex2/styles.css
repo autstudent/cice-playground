@@ -1,0 +1,23 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+.left-column {
+  grid-column: 1;
+  grid-row-start: 1;
+  grid-row-end: 6;
+}
+.right-column-up {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.right-column-down {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 6;
+}

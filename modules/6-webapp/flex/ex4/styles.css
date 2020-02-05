@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-up {
+  flex: 1;
+}
+
+.row-middle {
+  display: flex;
+  flex-direction: row;
+  flex: 4;
+}
+
+.row-down {
+  flex: 1;
+}
+
+.colum-left {
+  flex: 1;
+}
+
+.colum-middle {
+  flex: 2;
+}
+
+.colum-right {
+  flex: 1;
+}

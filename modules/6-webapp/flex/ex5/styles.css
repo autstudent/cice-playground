@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-up {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.row-middle {
+  display: flex;
+  flex-direction: row;
+  flex: 4;
+}
+
+.row-down {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.up-colum-left {
+  flex: 3;
+}
+
+.up-colum-right {
+  flex: 1;
+}
+
+.middle-colum-left {
+  flex: 1;
+}
+
+.middle-colum-right {
+  flex: 3;
+}
+
+.down-colum-left {
+  flex: 2;
+}
+
+.down-colum-right {
+  flex: 2;
+}

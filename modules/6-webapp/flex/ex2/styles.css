@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.column-main-left {
+  flex: 1;
+}
+
+.column-main-right {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.row-up {
+  flex: 1;
+}
+
+.row-down {
+  flex: 6;
+}
