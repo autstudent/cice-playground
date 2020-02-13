@@ -4,12 +4,13 @@
   --m: 1rem;
   --l: 2rem;
   --xl: 4rem;
+  --xxl: 8rem;
 
   --body-size: 16px;
   --title-size: 22px;
 
-  --body-font: sans-serif;
-  --title-font: sans-serif;
+  --body-font: Helvetica;
+  --title-font: Helvetica;
 
   --primary-color: #20c1ac;
   --on-primary-color: white;
@@ -17,8 +18,13 @@
   --secondary-color: #eceff1;
   --on-secondary-color: #253238;
 
+  --third-color: #90a4ae;
+  --on-third-color: white;
+
   --surface-color: white;
   --on-surface-color: #253238;
 
   --content-width: 60rem;
+
+  --image-size-regular: 340px;
 }

@@ -3,6 +3,7 @@
 @import './header.css';
 @import './button.css';
 @import './categories.css';
+@import './trending.css';
 
 body {
   font-family: var(--body-font);

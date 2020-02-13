@@ -4,6 +4,7 @@
   align-items: center;
   background-color: var(--surface-color);
   color: var(--on-surface-color);
+  padding-bottom: var(--xxl);
 }
 
 .categories__list {
