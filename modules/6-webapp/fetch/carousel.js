@@ -1,30 +1,48 @@
 export class Carousel {
   #carouselSelector = '#carousel'
   #slidesSelector = '#carousel > *'
-  #footerSelector = '#footer'
+  #nextSlidesSelector = '#next-slides'
+  #previousSlidesSelector = '#previous-slides'
 
-  currentIndex = 0
-  numberOfSlides = 0
-  carousel = document.querySelector(this.#carouselSelector)
-  slides = document.querySelectorAll(this.#slidesSelector)
-  footer = document.querySelector(this.#footerSelector)
+  #currentIndex = 0
+  #numberOfSlides = 0
+  #carousel = document.querySelector(this.#carouselSelector)
+  #slides = document.querySelectorAll(this.#slidesSelector)
+  #nextSlides = document.querySelector(this.#nextSlidesSelector)
+  #previousSlides = document.querySelector(this.#previousSlidesSelector)
+  #callback = () => {}
 
   init() {
-    this.numberOfSlides = this.slides.length
+    this.#numberOfSlides = this.#slides.length
     this.#setSlideEvents()
-    this.#setSlideIndicators()
+    this.#setSlideIndicatorsEvent()
+    return this
   }
 
-  showSlide(slideIndex) {
-    this.slides[slideIndex].scrollIntoView()
+  onNext(callback) {
+    this.#callback = callback.bind(this)
+    this.#nextSlide()
+    return this
   }
 
-  nextSlide() {
-    this.slides[this.currentIndex + 1].scrollIntoView()
+  #previousSlide() {
+    this.#slides[this.#currentIndex - 1].scrollIntoView()
+  }
+
+  async #nextSlide() {
+    const url = await this.#callback()
+    const image = document.createElement('img')
+    image.setAttribute('src', url)
+    image.dataset.id = this.#currentIndex
+    this.#carousel.appendChild(image)
+    const nextSlide = this.#currentIndex + 1
+    this.#slides = document.querySelectorAll(this.#slidesSelector)
+    this.#slides[nextSlide].scrollIntoView()
+    this.#setSlideEvents()
   }
 
   #setSlideEvents() {
-    this.slides.forEach((element, i) => (element.dataset.id = i.toString()))
+    this.#slides.forEach((element, i) => (element.dataset.id = i.toString()))
 
     const observer = new IntersectionObserver(
       entries => {
@@ -32,25 +50,28 @@ export class Carousel {
           entry.intersectionRatio > max.intersectionRatio ? entry : max
         )
         if (currentVisibleSlide.intersectionRatio > 0) {
-          this.currentIndex = Number(currentVisibleSlide.target.dataset.id)
+          this.#currentIndex = Number(currentVisibleSlide.target.dataset.id)
         }
       },
       {
-        root: this.carousel,
+        root: this.#carousel,
         threshold: 0.5
       }
     )
-    this.slides.forEach(element => observer.observe(element))
-  }
-
-  #setSlideIndicators() {
-    this.footer.innerHTML = this.#range(this.numberOfSlides).reduce(
-      (previousValue, currentValue) => previousValue + `<button class="indicator"></button>`,
-      ''
-    )
+    this.#slides.forEach(element => observer.observe(element))
   }
 
   #range(upto) {
     return Array.from({ length: upto }, (v, k) => k)
+  }
+
+  #setSlideIndicatorsEvent() {
+    this.#nextSlides.addEventListener('click', () => {
+      this.#nextSlide()
+    })
+
+    this.#previousSlides.addEventListener('click', () => {
+      this.#previousSlide()
+    })
   }
 }
