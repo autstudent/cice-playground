@@ -3,10 +3,13 @@
   padding: var(--s) var(--m);
   align-items: center;
   border-bottom: 1px solid var(--secondary-color);
+  align-items: center;
+  justify-content: center;
 }
 
-.header > :not(*:last-child) {
-  margin-right: var(--m);
+.header > * {
+  margin-left: var(--s);
+  margin-right: var(--s);
 }
 
 .header__logo {
@@ -33,4 +36,15 @@
   background-color: transparent;
   border: none;
   font-size: inherit;
+}
+
+.header a {
+  text-decoration: none;
+  padding: var(--m);
+  color: var(--third-color);
+}
+
+.header a > i {
+  font-size: 20px;
+  margin-right: var(--s);
 }

@@ -8,6 +8,7 @@
 
   --body-size: 16px;
   --title-size: 22px;
+  --title-front-size: 34px;
 
   --body-font: Helvetica;
   --title-font: Helvetica;
@@ -27,4 +28,7 @@
   --content-width: 60rem;
 
   --image-size-regular: 340px;
+  --image-size-small: 100px;
+
+  --button-size-regular: 50px;
 }

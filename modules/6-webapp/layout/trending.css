@@ -6,6 +6,16 @@
   color: var(--on-secondary-color);
 }
 
+.trending p {
+  margin-top: 0;
+  color: var(--third-color);
+}
+
+.trending h1 {
+  margin-top: var(--xl);
+  margin-bottom: 0;
+}
+
 .trending__list {
   display: flex;
 }

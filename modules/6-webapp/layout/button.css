@@ -14,10 +14,21 @@
 .button__primary {
   background-color: var(--primary-color);
   color: var(--on-primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.button__primary:hover {
+  color: var(--primary-color);
+  background-color: var(--on-primary-color);
 }
 
 .button__secondary {
   background-color: var(--on-primary-color);
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
+}
+
+.button__secondary:hover {
+  color: var(--on-primary-color);
+  background-color: var(--primary-color);
 }
