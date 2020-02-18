@@ -2,11 +2,15 @@ describe('arrays', () => {
   it('should obtain the power of 2 for a given number of elements', () => {
     const given = [1, 2, 3]
 
+    const actual = given.map(item => item * item)
+
     expect(actual).toEqual([1, 4, 9])
   })
 
   it('should filter the even numbers', () => {
     const given = [1, 24, 3, 8, 10]
+
+    const actual = given.filter(item => item % 2 == 0)
 
     expect(actual).toEqual([24, 8, 10])
   })
@@ -14,11 +18,16 @@ describe('arrays', () => {
   it('should add all the numbers', () => {
     const given = [1, 2, 3]
 
+    let actual = 0
+    given.map(item => (actual = actual + item))
+
     expect(actual).toBe(6)
   })
 
   it('should sort alphabetically', () => {
     const given = ['javascript', 'java', 'python', 'lua']
+
+    const actual = given.sort()
 
     expect(actual).toEqual(['java', 'javascript', 'lua', 'python'])
   })
@@ -39,17 +48,36 @@ describe('arrays', () => {
       }
     ]
 
+    const actual = animals.filter(item => item.legs > 2).map(item => item.name)
+
     expect(actual).toEqual(['giraffe', 'dog'])
   })
 
   it('should remove vowels from a word', () => {
     const word = 'hello world'
 
+    const actual = word
+      .split('')
+      .map(character => {
+        if (/[aeiouyAEIOUY]/.test(character)) {
+          character = ''
+        } else {
+          return character
+        }
+      })
+      .join('')
+
     expect(actual).toBe('hll wrld')
   })
 
   it('should return a count of all repeated elements', () => {
     const given = ['🍋', '🍉', '🍒', '🍋', '🍋', '🍎', '🍎', '🍐']
+
+    const actual = given
+      .filter((fruit, index, self) => {
+        return self.indexOf(fruit) === index
+      })
+      .map()
 
     expect(actual).toEqual({
       '🍋': 3,
