@@ -73,11 +73,19 @@ describe('arrays', () => {
   it('should return a count of all repeated elements', () => {
     const given = ['🍋', '🍉', '🍒', '🍋', '🍋', '🍎', '🍎', '🍐']
 
-    const actual = given
+    const actual = {}
+
+    given
       .filter((fruit, index, self) => {
         return self.indexOf(fruit) === index
       })
-      .map()
+      .map(uniqfruit => {
+        let count = 0
+        given.map(item => {
+          if (uniqfruit === item) count++
+        })
+        actual[uniqfruit] = count
+      })
 
     expect(actual).toEqual({
       '🍋': 3,
@@ -94,6 +102,20 @@ describe('arrays', () => {
       { name: 'Max', age: 20 },
       { name: 'Jane', age: 20 }
     ]
+
+    const actual = {}
+
+    given
+      .filter((age, index, self) => {
+        return self.indexOf(age) === index
+      })
+      .map(uniqage => {
+        if (Object.keys(actual).includes(`${uniqage.age}`)) {
+          actual[uniqage.age].push(uniqage)
+        } else {
+          actual[uniqage.age] = [uniqage]
+        }
+      })
 
     expect(actual).toEqual({
       20: [
@@ -123,6 +145,14 @@ describe('arrays', () => {
       }
     ]
 
+    const actual = given
+      .map(author => author.books.join())
+      .join()
+      .split(',')
+      .filter((book, index, self) => {
+        return self.indexOf(book) === index
+      })
+
     expect(actual).toEqual([
       'Dune',
       'Harry Potter',
@@ -136,11 +166,23 @@ describe('arrays', () => {
   it('should make sure every element of the array is positive', () => {
     const given = [1, -2, -5, 9]
 
+    const actual = given.some(item => {
+      if (item < 0) return false
+    })
+
     expect(actual).toBe(false)
   })
 
   it('should add the length of all sub arrays', () => {
     const given = [1, [2, 3], [4, 5], [6, 7]]
+
+    let actual = 0
+
+    given.map(item => {
+      let tmpvalue = 1
+      if (Array.isArray(item)) tmpvalue = item.length
+      actual = actual + tmpvalue
+    })
 
     expect(actual).toBe(7)
   })
@@ -152,6 +194,12 @@ describe('arrays', () => {
       aa: 3,
       ab: 4
     }
+
+    const actual = {}
+
+    Object.keys(given).map(item => {
+      if (item.indexOf('a') !== 0) actual[item] = given[item]
+    })
 
     expect(actual).toEqual({ ba: 2 })
   })
