@@ -209,7 +209,20 @@ describe('arrays', () => {
       foo: 1,
       dynamicProp: 2
     }
-    const randomNumber = 0.5
+    const randomNumber = 0.6
+
+    const actual = {}
+
+    // const actual = {}
+    // Object.assign(given, actual);
+    //  ===
+    // const actual = {
+    //   ...given
+    // }
+
+    if (randomNumber > 0.5) {
+      actual.push({ foo: 1 })
+    }
 
     expect(actual).toEqual({ foo: 1 })
   })
