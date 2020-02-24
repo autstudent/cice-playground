@@ -221,7 +221,6 @@ describe('arrays', () => {
     // }
 
     if (randomNumber > 0.5) {
-      actual.push({ foo: 1 })
     }
 
     expect(actual).toEqual({ foo: 1 })
