@@ -1,0 +1,53 @@
+.App-list {
+  display: flex;
+  flex-direction: row;
+  color: #61dafb;
+}
+
+.App-list-todo {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  text-align: left;
+}
+
+.App-list-todo h1,
+h2 {
+  margin: 0px;
+}
+
+.App-list-todo p {
+  margin: 0px;
+}
+
+.App-list-todo input {
+  color: #61dafb;
+  background-color: #373c46;
+  border: none;
+}
+
+.App-list-todo i {
+  position: absolute;
+  width: 1px;
+  height: 80%;
+  background-color: gray;
+  left: 5px;
+  top: 10%;
+  animation-name: blink;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  opacity: 1;
+}
+
+.App-list-todo input:focus + i {
+  display: none;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
