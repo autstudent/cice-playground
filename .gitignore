@@ -5,10 +5,16 @@ coverage
 dist
 .cache
 <<<<<<< HEAD
+<<<<<<< HEAD
 package-lock.json
 =======
+=======
+>>>>>>> 99f7994a67e6e1b81453f0c456b51fc4f6adc51c
 .yarn/*
 !.yarn/releases
 !.yarn/plugins
 .pnp.*
+<<<<<<< HEAD
 >>>>>>> 178ce72cafd7889d58d116bfa4001c266efb9f2b
+=======
+>>>>>>> 99f7994a67e6e1b81453f0c456b51fc4f6adc51c

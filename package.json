@@ -31,6 +31,7 @@
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.18.3",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "husky": "4.2.1",
     "jest": "^25.1.0",
     "lint-staged": "10.0.7",
@@ -39,6 +40,11 @@
     "jest": "25.1.0",
     "lint-staged": "10.0.8",
 >>>>>>> 178ce72cafd7889d58d116bfa4001c266efb9f2b
+=======
+    "husky": "4.2.3",
+    "jest": "25.1.0",
+    "lint-staged": "10.0.8",
+>>>>>>> 99f7994a67e6e1b81453f0c456b51fc4f6adc51c
     "prettier": "1.19.1",
     "ts-mockito": "2.5.0",
     "typescript": "3.8.3"
