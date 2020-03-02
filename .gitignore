@@ -4,4 +4,11 @@ node_modules
 coverage
 dist
 .cache
+<<<<<<< HEAD
 package-lock.json
+=======
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+>>>>>>> 178ce72cafd7889d58d116bfa4001c266efb9f2b
