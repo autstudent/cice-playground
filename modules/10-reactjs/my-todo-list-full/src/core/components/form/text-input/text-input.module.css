@@ -1,0 +1,7 @@
+.input {
+  border: 1px solid var(--gray-color);
+}
+
+.input:focus {
+  border: 1px solid var(red);
+}
