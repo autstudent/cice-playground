@@ -30,12 +30,11 @@
     "eslint-config-prettier": "6.10.0",
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.18.3",
-    "husky": "4.2.3",
     "jest": "25.1.0",
-    "lint-staged": "10.0.8",
     "prettier": "1.19.1",
     "ts-mockito": "2.5.0",
     "typescript": "3.8.3"
+<<<<<<< HEAD
   },
   "lint-staged": {
     "modules/**/*.{ts,tsx,js,jsx,json,css,md}": [
@@ -51,5 +50,7 @@
   "dependencies": {
     "mocha": "^7.0.1",
     "prime-number": "^1.0.2"
+=======
+>>>>>>> dd3b7e54aa5167768189618eeb2a7a2348b27a72
   }
 }
